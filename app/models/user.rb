@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
       if registered_user
         return registered_user
       else
-        user = User.create(name:auth.extra.raw_info.name,
+        user = User.create( name:auth.extra.raw_info.name,
                             provider:auth.provider,
                             uid:auth.uid,
                             email:auth.info.email,
@@ -22,6 +22,20 @@ class User < ActiveRecord::Base
       end
        
     end
+  end
+
+
+    def self.find_for_vkontakte_oauth access_token
+      user = User.where(:provider => auth.provider, :uid => auth.uid).first
+      if user 
+        return user
+      else 
+        user = User.create( :provider => access_token.provider,
+                            :url => access_token.info.urls.Vkontakte,
+                            :name => access_token.info.name,
+                            :email => access_token.extra.raw_info.domain+'@vk.com',
+                            :password => Devise.friendly_token[0,20])
+      end
   end
   
 end
