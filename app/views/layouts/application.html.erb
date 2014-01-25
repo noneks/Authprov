@@ -2,13 +2,30 @@
 <html>
 <head>
   <title>Authprov</title>
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="stylesheet" href="/css/bootstrap-theme.css">
+  <link rel="stylesheet" href="/css/app.css">
+  <script src="/js/bootstrap.js"></script>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %></br>
-<%= link_to "Sign in with Vkontakte", user_omniauth_authorize_path(:vkontakte) %>
+  <nav class="navbar-default navbar-static-top" role="navigation">
+      <ul class="nav nav-tabs">
+        <li><a href="/">Home</a></li>  
+        <%- if user_signed_in? %> 
+          <li><a href="/users/profile">Profile</a></li>     
+          <li class="pull-right"><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+        <%- else %>
+          <li class="pull-right"><%= link_to 'Sign up', new_user_registration_path %></li>
+          <li class="pull-right"><%= link_to 'Sign in', new_user_session_path %></li>
+        <%- end %>              
+      </ul>
+  </nav>
 
+    <div class="container"> 
+      <%= yield %>
+    </div>
 </body>
 </html>
