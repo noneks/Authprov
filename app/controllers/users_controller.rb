@@ -6,4 +6,9 @@ class UsersController < ApplicationController
   def profile
     current_user
   end
+  
+  def destroy
+  	user.destroy
+
+  	redirect_to welcome_index
 end

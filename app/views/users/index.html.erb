@@ -12,7 +12,7 @@
         <td><%=user.uid%></td>
         <td><%=user.name%></td>
         <td><%=user.provider%></td>
-        <td><%= button_to "Suicide", "/users/#{user.id}", method: 'delete' %></td>
+        <td><%= button_to "Suicide", "/users/#{user.id}", method: 'destroy' %></td>
       </tr>
     <%end%>
   </tbody>
