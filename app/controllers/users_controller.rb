@@ -11,4 +11,5 @@ class UsersController < ApplicationController
   	user.destroy
 
   	redirect_to welcome_index
+  end
 end
