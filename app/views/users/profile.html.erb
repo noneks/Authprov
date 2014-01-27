@@ -4,6 +4,6 @@ Your profile
   <li><%=current_user.uid%></li>
   <li><%=current_user.email%></li>
   <li><%=current_user.provider%></li>
-  <li><%= button_to 'Selfdestruct', "/users/#{current_user.id}", method: 'delete' %></li>
   <li><img src="<%=current_user.image%>" alt="ur photo"></li>
+  <li><%= button_to 'kill', "/users/#{current_user.id}", method: 'delete' %></li>
 </ul>
