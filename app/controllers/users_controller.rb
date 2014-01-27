@@ -7,9 +7,9 @@ class UsersController < ApplicationController
     current_user
   end
   
-  def destroy
-  	@user = User.find(params[:id])
-    @user.destroy
-    redirect_to users_index_path
-  end
+   def destroy
+     @user = User.find(params[:id])
+     @user.destroy
+     redirect_to users_index_path
+   end
 end
