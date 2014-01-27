@@ -36,6 +36,7 @@ class User < ActiveRecord::Base
                             uid: access_token.uid,
                             name: access_token.info.name,
                             email: access_token.uid+'@vk.com',
+                            image: access_token.image,
                             password: Devise.friendly_token[0,20])
       end
     end
