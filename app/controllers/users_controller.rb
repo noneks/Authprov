@@ -8,8 +8,8 @@ class UsersController < ApplicationController
   end
   
   def destroy
-  	user.destroy
-
-  	redirect_to welcome_index
+  	@user = User.find(params[:id])
+    @user.destroy
+    redirect_to users_index_path
   end
 end
