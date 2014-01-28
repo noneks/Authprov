@@ -12,7 +12,9 @@
         <td><%=user.uid%></td>
         <td><%=user.name%></td>
         <td><%=user.provider%></td>
-        <td><%= button_to 'bad_user', "/users/#{user.id}", method: 'delete' %></td>
+       <% unless current_user.has_role? :editor %>
+          <td><%= button_to 'Kill', "/users/#{user.id}", method: 'delete' %></td>
+        <% end %>
       </tr>
     <%end%>
   </tbody>

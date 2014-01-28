@@ -1,6 +1,14 @@
+require 'role_model'
+
 class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
+
+  include RoleModel
+
+  roles_attribute :roles_mask
+ 
+  roles :admin, :editor
 
   def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
     user = User.where(:provider => auth.provider, :uid => auth.uid).first
@@ -16,6 +24,7 @@ class User < ActiveRecord::Base
                             uid:auth.uid,
                             email:auth.info.email,
                             password:Devise.friendly_token[0,20],
+                            roles: [:editor]
                           )
       end
        
@@ -37,7 +46,9 @@ class User < ActiveRecord::Base
                             name: access_token.info.name,
                             email: access_token.uid+'@vk.com',
                             image: access_token.info.image,
-                            password: Devise.friendly_token[0,20])
+                            password: Devise.friendly_token[0,20],
+                            roles: [:editor]
+                          )
       end
     end
   end
