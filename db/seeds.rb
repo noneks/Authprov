@@ -8,7 +8,7 @@
 user = User.create(
 	provider: "vkontakte",
 	uid: "6736402",
-	name: "Кирилл Иванов"
+	name: "Кирилл Иванов",
 	email: "6736402@vk.com",
 	image: "http://cs616426.vk.me/v616426402/178d/pBfFq27EoOk.jpg",
 	password: Devise.friendly_token[0,20],
