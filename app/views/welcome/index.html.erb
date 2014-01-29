@@ -4,6 +4,7 @@
     <%= f.label :picture %>
     <%= file_field(:attachment, :picture, class: 'file_input') %>
     <%= f.submit %>
+    <%= image_tag current_user.picture.url(:medium) %>
   </div>
 <% end %>
   <%= button_to 'Выйти', destroy_user_session_path, method: 'delete' %>
