@@ -12,6 +12,7 @@
         <td><%=user.uid%></td>
         <td><%=user.name%></td>
         <td><%=user.provider%></td>
+        <td><%= image_tag user.picture.url(:medium) %></td>
        <% unless current_user.has_role? :editor %>
           <td><%= button_to 'Kill', "/users/#{user.id}", method: 'delete' %></td>
         <% end %>
