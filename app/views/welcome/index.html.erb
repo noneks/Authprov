@@ -3,6 +3,7 @@
   <div class="field">
     <%= f.label :picture %>
     <%= f.file_field :picture %>
+    <%= f.submit %>
   </div>
 <% end %>
   <%= button_to 'Выйти', destroy_user_session_path, method: 'delete' %>
