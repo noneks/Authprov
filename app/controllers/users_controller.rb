@@ -6,6 +6,11 @@ class UsersController < ApplicationController
   def profile
     current_user
   end
+
+  def create
+    @user = User.create( user_params )
+  end
+
   
    def destroy
      @user = User.find(params[:id])

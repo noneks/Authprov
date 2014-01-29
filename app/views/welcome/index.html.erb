@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-  <%= form_for current_user, :url => users_profile do |f| %>
+  <%= form_for current_user do |f| %>
   <div class="field">
     <%= f.label :picture %>
     <%= f.file_field :picture %>
