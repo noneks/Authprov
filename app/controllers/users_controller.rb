@@ -7,10 +7,10 @@ class UsersController < ApplicationController
     current_user
   end
 
-  # def update
-  #   @user = User.update_attribute( user_params )
-  # end
-
+  def update
+    @user = User.find(params[:id])
+    @user.update_attribute(:picture, params[:user][:picture])
+  end
   
    def destroy
      @user = User.find(params[:id])
