@@ -1,5 +1,5 @@
 <% if user_signed_in? %>
-  <%= form_for current_user do |f| %>
+  <%= form_for current_user, :url => {:action => "update"} do |f| %>
   <div class="field">
     <%= f.label :picture %>
     <%= file_field(:attachment, :picture, class: 'file_input') %>
