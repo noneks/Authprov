@@ -4,7 +4,6 @@
     <%= f.label :picture %>
     <%= f.file_field :picture %>
   </div>
-  <%= f.submit 'Upload' %>
 <% end %>
   <%= button_to 'Выйти', destroy_user_session_path, method: 'delete' %>
 <% else %>
