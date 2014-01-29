@@ -7,8 +7,8 @@ class UsersController < ApplicationController
     current_user
   end
 
-  def create
-    @user = User.create( user_params )
+  def update
+    @user = User.update( user_params )
   end
 
   
