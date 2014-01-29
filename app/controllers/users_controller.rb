@@ -7,9 +7,9 @@ class UsersController < ApplicationController
     current_user
   end
 
-  def update
-    @user = User.update_attribute( user_params )
-  end
+  # def update
+  #   @user = User.update_attribute( user_params )
+  # end
 
   
    def destroy

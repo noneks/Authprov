@@ -2,7 +2,6 @@
   <%= form_for current_user do |f| %>
   <div class="field">
     <%= f.label :picture %>
-    <%= f.file_field :picture %>
     <%= file_field(:attachment, :picture, class: 'file_input') %>
     <%= f.submit %>
   </div>
