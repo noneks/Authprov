@@ -8,7 +8,7 @@ class Ability
     if user.has_role? :admin
       can :manage, :all
     elsif user.has_role? :editor
-      can :read, :all
+      can :manage, :all
     end
   end
 end
