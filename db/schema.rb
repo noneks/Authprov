@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140129044011) do
+ActiveRecord::Schema.define(version: 20140131054706) do
 
-  create_table "images", force: true do |t|
-    t.string   "attach_file_name"
-    t.string   "attach_content_type"
-    t.integer  "attach_file_size"
-    t.string   "attach_updated_at"
+  create_table "pictures", force: true do |t|
+    t.string   "pic_file_name"
+    t.string   "pic_content_type"
+    t.integer  "pic_file_size"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -38,11 +38,8 @@ ActiveRecord::Schema.define(version: 20140129044011) do
     t.string   "provider"
     t.string   "uid"
     t.string   "name"
+    t.string   "image"
     t.integer  "roles_mask"
-    t.string   "picture_file_name"
-    t.string   "picture_content_type"
-    t.integer  "picture_file_size"
-    t.datetime "picture_updated_at"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
