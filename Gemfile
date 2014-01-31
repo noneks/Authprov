@@ -9,7 +9,6 @@ gem 'omniauth-vkontakte'
 gem 'rails', '4.0.2'
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3', :group => :development
 gem 'pg', :group => :production
 
 # Use SCSS for stylesheets
@@ -23,6 +22,12 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem 'cancan'
 gem 'role_model'
+gem "paperclip", "~> 3.0"
+
+group :development do
+	gem 'awesome_print'
+	gem 'sqlite3'
+end
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
