@@ -28,7 +28,7 @@ group :development do
 	gem 'awesome_print'
 	gem 'sqlite3'
 	gem "better_errors"
-	gem 'gem binding_of_caller'
+	gem 'binding_of_caller'
 end
 
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
