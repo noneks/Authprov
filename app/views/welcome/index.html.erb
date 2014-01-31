@@ -1,5 +1,9 @@
 <% if user_signed_in? %>
+<<<<<<< HEAD
   <%= form_for @picture, :html => { :multipart => true }   do |f| %>
+=======
+<%= form_for @picture, :html => { :multipart => true }   do |f| %>
+>>>>>>> features/paperclip-upload
   <div class="field">
     <%= f.label :picture %>
     <%= f.file_field :pic%></br>
