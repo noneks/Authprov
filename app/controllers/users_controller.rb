@@ -3,13 +3,19 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+
+  def show
+    @pictures = Picture.find(params[current_user])
+  end
+
   def profile
     current_user
   end
-  
-   def destroy
-     @user = User.find(params[:id])
-     @user.destroy
-     redirect_to users_index_path
-   end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to users_index_path
+  end
+
 end

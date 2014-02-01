@@ -1,9 +1,5 @@
-Your profile
-<ul>
-  <li><%=current_user.name%></li>
-  <li><%=current_user.uid%></li>
-  <li><%=current_user.email%></li>
-  <li><%=current_user.provider%></li>
-  <li><img src="<%=current_user.image%>" alt="ur photo"></li>
-  <li><%= button_to 'kill', "/users/#{current_user.id}", method: 'delete' %></li>
-</ul>
+<p>My name is : <%= current_user.name %></p>
+<p>My uid is : <%= current_user.uid %></p>
+<p>My email is : <%= current_user.email %></p>
+<p>I log in with <%= current_user.provider %><p>
+ <img src="<%=current_user.image%>" alt="ur photo">

@@ -7,6 +7,7 @@ gem 'omniauth-facebook'
 gem 'omniauth-vkontakte'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.2'
+gem 'rails_12factor', :group => :production
 
 # Use sqlite3 as the database for Active Record
 gem 'pg', :group => :production

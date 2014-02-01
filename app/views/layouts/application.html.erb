@@ -1,13 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Authprov</title>
+  <title>Photoblog</title>
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="stylesheet" href="/css/bootstrap-theme.css">
+  
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="/js/bootstrap.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="container"> 
+	<nav class="navbar-default navbar-static-top" role="navigation">
+    <ul class="nav nav-tabs">
+      <li><a href="/welcome/index">Home</a></li>  
+      <%- if user_signed_in? %> 
+        <li><a href="/users/profile">My Profile</a></li>
+        <li><a href="#">My Picture</a></li>   
+        <li class="pull-right"><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
+      <%- else %>
+        <li class="pull-right"><%= link_to image_tag('http://www.mayecreate.com/wp-content/uploads/2013/12/facebook_new.png', size: "32"), user_omniauth_authorize_path(:facebook)%></li>
+        <li class="pull-right"><%= link_to image_tag('http://www.persona89.ru/images/vk.png', size: "32"), user_omniauth_authorize_path(:vkontakte)%></li>
+      <%- end %>              
+    </ul>
+    </nav>
+  <div class="container"> 
   <%= yield %>
 </div>
 </body>
