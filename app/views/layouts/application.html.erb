@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="http://blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
   <link rel="stylesheet" href="css/bootstrap-image-gallery.min.css">
   
-
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script src="http://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
   <script src="js/bootstrap-image-gallery.min.js"></script>
@@ -19,7 +19,7 @@
 	<nav class="navbar-default navbar-static-top" role="navigation">
     <ul class="nav nav-tabs">
       <li><a href="/welcome/index">Home</a></li>  
-      <% if user_signed_in? %> 
+      <%- if user_signed_in? %> 
         <li><a href="/users/profile"><%= current_user.name %></a></li>
         <li><a href="/pictures/show">My Picture</a></li>   
         <li class="pull-right"><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></li>
