@@ -1,13 +1,12 @@
 <% if user_signed_in? %>
   Hello <%= current_user.name %> 
-  
-<%= form_for @picture, :html => { :multipart => true }   do |f| %>
-  <div class="field">
-    <%= f.label :picture %>
-    <%= f.file_field :pic%></br>
-    <%= f.submit %>
-  </div>
-<% end %>
+  <%= form_for @picture, :html => { :multipart => true }   do |f| %>
+    <div class="field">
+      <%= f.label :picture %>
+      <%= f.file_field :pic%></br>
+      <%= f.submit %>
+    </div>
+  <% end %>
 <% else %>
   Idk :C
 <% end %>

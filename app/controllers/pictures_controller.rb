@@ -8,14 +8,14 @@ class PicturesController < ApplicationController
     @picture = Picture.new(picture_params)
     @picture.user = current_user
     if @picture.save
-      redirect_to "/users/picture"
+      redirect_to "/users/profile"
     else
       erb :"welcome/index"
     end
   end
 
   def show
-    @picture = Picture.find(params[current_user])
+    @pictures = current_user.pictures
   end
 
   private 
